@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+    <section class="main">
+        <div class="mobile__menu container-fluid">
+            <div class="row justify-content-between">
+                <div class="mobile__logo logo col-6 ">
+                    <a href="#">
+                        <img src="img/logo-mobile.svg" alt="">
+                    </a>
+                </div>
+                <div class="mobile__menu-btn col-6">
+                    <img src="img/icons/menu-btn.svg" alt="">
+                </div>
+            </div>
+            <div class="main__menu">
+                <div class="main__menu-tabs">
+                    <div class="main__menu-item tab active" data-id="1">
+                        <p>Профиль</p>
+                    </div>
+                    <div class="main__menu-item tab" data-id="2">
+                        <p>Все предприятия</p>
+                    </div>
+                    <div class="main__menu-item tab" data-id="3">
+                        <p>Общий чат</p>
+                    </div>
+                    <div class="main__menu-item tab" data-id="4">
+                        <p>Новости</p>
+                    </div>
+                    <div class="main__menu-item tab" data-id="5">
+                        <p>Идеи</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="main__box col-3 col-md-4 col-lg-3">
+                    <div class="main__sidebar sidebar sidebar-fixed position-fixed">
+                        <div class="main__logo">
+                            <a href="#">
+                                <img src="img/logo.svg" alt="">
+                            </a>
+                        </div>
+                        <nav class="main__menu">
+                            <div class="main__menu-tabs">
+                                <div class="main__menu-item tab active" data-id="1">
+                                    <p>Профиль</p>
+                                </div>
+                                <div class="main__menu-item tab" data-id="2">
+                                    <p>Все предприятия</p>
+                                </div>
+                                <div class="main__menu-item tab" data-id="3">
+                                    <p>Общий чат</p>
+                                </div>
+                                <div class="main__menu-item tab" data-id="4">
+                                    <p>Новости</p>
+                                </div>
+                                <div class="main__menu-item tab" data-id="5">
+                                    <p>Идеи</p>
+                                </div>
+                            </div>
+
+                        </nav>
+                    </div>
+                </div>
+                <div class="main__content-box col-12 col-md-8 col-sm-12 col-lg-9 justify-content-sm-center">
+                    <div class="main__content-box-bg">
+                        <div class="main__content active-tab" id="1">
+                            <div class="progressbar">
+                                <div class="progressbar__box">
+                                    <div class="progressbar__from">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                    <div class="progressbar__lvl">
+                                        <p><span>12</span>lvl</p>
+                                    </div>
+                                    <div class="progressbar__to">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                </div>
+                                <div class="progressbar__scale progressbar__scale-50"></div>
+                            </div>
+                            <div class="main__content-inner main__content-profile-inner">
+                                <div class="row justify-content-center justify-content-lg-start">
+                                    <div class="main__content-profile-info">
+                                        <div class="main__content-profile-info-foto">
+                                            <img src="img/icons/curcle-gray.svg" alt="">
+                                        </div>
+                                        <div class="main__content-profile-info-box">
+                                            <div class="main__content-profile-info-name">
+                                                <p>Fenomen-1hp</p>
+                                                <span>Укажите основную информацию, чтобы пользоваться Restart было
+                                                    удобнее</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form class="main__content-profile-dataForm">
+                                        <div class="row justify-content-center justify-content-lg-start">
+                                            <div class="profile-Form-input col-12 col-sm-6">
+                                                <label>Имя</label>
+                                                <input type="text">
+                                            </div>
+                                            <div class="profile-Form-input col-12 col-sm-6">
+                                                <label>Никнейм</label>
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center justify-content-lg-start">
+                                            <div class="profile-Form-input col-12 col-sm-6">
+                                                <label>Email</label>
+                                                <input type="email">
+                                            </div>
+                                            <div class="profile-Form-input profile-dataForm-rating col-12 col-sm-6">
+                                                <label>Место в общем рейтинге</label>
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form class="main__content-profile-passForm">
+                                        <div class="main__content-profile-passForm-title">
+                                            <p>Изменить пароль</p>
+                                        </div>
+                                        <div class="profile-Form-input">
+                                            <label>Старый пароль:</label>
+                                            <input type="password">
+                                        </div>
+                                        <div class="profile-Form-input">
+                                            <label>Новый пароль:</label>
+                                            <input type="password">
+                                        </div>
+                                        <div class="profile-Form-input">
+                                            <label>Новый пароль:</label>
+                                            <input type="password">
+                                        </div>
+                                        <div class="profile-passForm-btn">
+                                            <button>Изменить пароль</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main__content main__content-allCompany" id="2">
+                            <div class="progressbar progressbar-50">
+                                <div class="progressbar__box">
+                                    <div class="progressbar__from">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                    <div class="progressbar__lvl">
+                                        <p><span>12</span>lvl</p>
+                                    </div>
+                                    <div class="progressbar__to">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                </div>
+                                <div class="progressbar__scale progressbar__scale-50"></div>
+                            </div>
+                            <div class="main__content-inner">
+                                <div class="row justify-content-center justify-content-lg-start">
+                                    <a href="#" class="main__content-allCompany-item">
+                                        <div class="main__content-allCompany-item-img">
+                                            <img src="img/allCompany/img1.jpg" alt="">
+                                        </div>
+                                        <div class="main__content-allCompany-item-bg"></div>
+                                        <div class="main__content-allCompany-box">
+                                            <div class="main__content-allCompany-item-lvl">
+                                                <p><span>12</span>lvl</p>
+                                            </div>
+                                            <div class="main__content-allCompany-item-name">
+                                                <p>Кофейня Richar</p>
+                                            </div>
+                                        </div>
+                                        <div class="main__content-allCompany-item-hover"></div>
+                                    </a>
+                                    <a href="#" class="main__content-allCompany-item">
+                                        <div class="main__content-allCompany-item-img">
+                                            <img src="img/allCompany/img1.jpg" alt="">
+                                        </div>
+                                        <div class="main__content-allCompany-item-bg"></div>
+                                        <div class="main__content-allCompany-box">
+                                            <div class="main__content-allCompany-item-lvl">
+                                                <p><span>12</span>lvl</p>
+                                            </div>
+                                            <div class="main__content-allCompany-item-name">
+                                                <p>Кофейня Richar</p>
+                                            </div>
+                                        </div>
+                                        <div class="main__content-allCompany-item-hover"></div>
+                                    </a>
+                                </div>
+                                <div class="row justify-content-center justify-content-md-start">
+                                    <a href="#" class="main__content-allCompany-item">
+                                        <div class="main__content-allCompany-item-img">
+                                            <img src="img/allCompany/img1.jpg" alt="">
+                                        </div>
+                                        <div class="main__content-allCompany-item-bg"></div>
+                                        <div class="main__content-allCompany-box">
+                                            <div class="main__content-allCompany-item-lvl">
+                                                <p><span>12</span>lvl</p>
+                                            </div>
+                                            <div class="main__content-allCompany-item-name">
+                                                <p>Кофейня Richar</p>
+                                            </div>
+                                        </div>
+                                        <div class="main__content-allCompany-item-hover"></div>
+                                    </a>
+                                    <div class="main__content-allCompany-item main__content-allCompany-item-plus">
+                                        <a href="#" class="main__content-allCompany-item-border">
+                                            <img src="img/icons/plus.svg" alt="">
+                                        </a>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="main__content main__content-chat" id="3">
+                            <div class="progressbar">
+                                <div class="progressbar__box">
+                                    <div class="progressbar__from">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                    <div class="progressbar__lvl">
+                                        <p><span>12</span>lvl</p>
+                                    </div>
+                                    <div class="progressbar__to">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                </div>
+                                <div class="progressbar__scale progressbar__scale-50"></div>
+                            </div>
+                            <div class="main__content-inner">
+                                <div class="row justify-content-center justify-content-lg-start">
+                                    <div class="main__content-chat-box">
+                                        <div class="main__content-chat-box-wrapper">
+                                            <div class="main__content-chat-message">
+                                                <div class="main__content-chat-message-name">
+                                                    <p>Fenomen-1hp</p>
+                                                </div>
+                                                <div class="main__content-chat-message-text">
+                                                    <p>Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо? </p>
+                                                </div>
+                                                <div class="main__content-chat-message-time">
+                                                    <p>14:30</p>
+                                                </div>
+                                            </div>
+                                            <div class="main__content-chat-message">
+                                                <div class="main__content-chat-message-name">
+                                                    <p>Fenomen-1hp</p>
+                                                </div>
+                                                <div class="main__content-chat-message-text">
+                                                    <p>Привет, как дела? Все хорошо?</p>
+                                                </div>
+                                                <div class="main__content-chat-message-time">
+                                                    <p>14:30</p>
+                                                </div>
+                                            </div>
+                                            <div class="main__content-chat-message">
+                                                <div class="main__content-chat-message-name">
+                                                    <p>Fenomen-1hp</p>
+                                                </div>
+                                                <div class="main__content-chat-message-text">
+                                                    <p>Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо? </p>
+                                                </div>
+                                                <div class="main__content-chat-message-time">
+                                                    <p>14:30</p>
+                                                </div>
+                                            </div>
+                                            <div class="main__content-chat-message">
+                                                <div class="main__content-chat-message-name">
+                                                    <p>Fenomen-1hp</p>
+                                                </div>
+                                                <div class="main__content-chat-message-text">
+                                                    <p>Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?</p>
+                                                </div>
+                                                <div class="main__content-chat-message-time">
+                                                    <p>14:30</p>
+                                                </div>
+                                            </div>
+                                            <div class="main__content-chat-message">
+                                                <div class="main__content-chat-message-name">
+                                                    <p>Fenomen-1hp</p>
+                                                </div>
+                                                <div class="main__content-chat-message-text">
+                                                    <p>Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?
+                                                        Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?</p>
+                                                </div>
+                                                <div class="main__content-chat-message-time">
+                                                    <p>14:30</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main__content-chat-entr">
+                                            <form>
+                                                <textarea></textarea>
+                                                <button>
+                                                    <img src="img/icons/send.svg" alt="">
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main__content main__content-news" id="4">
+                            <div class="progressbar progressbar-50">
+                                <div class="progressbar__box">
+                                    <div class="progressbar__from">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                    <div class="progressbar__lvl">
+                                        <p><span>12</span>lvl</p>
+                                    </div>
+                                    <div class="progressbar__to">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                </div>
+                                <div class="progressbar__scale progressbar__scale-50"></div>
+                            </div>
+                            <div class="main__content-inner">
+                                <div class="row justify-content-center justify-content-lg-start">
+                                    <div class="main__content-news-wrapper">
+                                        <div class="main__content-news-item">
+                                            <div class="content-news-item-box">
+                                                <div class="content-news-item-title">
+                                                    <p>Новость</p>
+                                                </div>
+                                                <div class="content-news-item-box-container">
+                                                    <div class="content-news-item-update">
+                                                        <p>Обновление</p>
+                                                    </div>
+                                                    <div class="content-news-item-date">
+                                                        <p>25.04.2021<span>14:30</span></p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="content-news-item-text">
+                                                <p>
+                                                    Равным образом постоянное информационно-техническое обеспечение
+                                                    нашей деятельности напрямую зависит от направлений прогрессивного
+                                                    развития. Равным образом консультация с профессионалами из IT
+                                                    позволяет оценить значение дальнейших направлений развития проекта!
+                                                    Повседневная практика показывает, что постоянный количественный рост
+                                                    и сфера нашей активности обеспечивает актуальность модели развития.
+                                                </p>
+                                                <p>
+                                                    Не следует, однако, забывать о том, что рамки и место обучения
+                                                    кадров позволяет выполнить важнейшие задания по разработке
+                                                    дальнейших направлений развитая системы массового участия.
+                                                    Соображения высшего порядка, а также повышение уровня гражданского
+                                                    сознания напрямую зависит от всесторонне сбалансированных
+                                                    нововведений. Соображения высшего порядка, а также рамки и место
+                                                    обучения кадров представляет собой интересный эксперимент проверки
+                                                    новых предложений. С другой стороны постоянное
+                                                    информационно-техническое обеспечение
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="main__content-news-item">
+                                            <div class="content-news-item-box">
+                                                <div class="content-news-item-title">
+                                                    <p>Новость</p>
+                                                </div>
+                                                <div class="content-news-item-box-container">
+                                                    <div class="content-news-item-update">
+                                                        <p>Обновление</p>
+                                                    </div>
+                                                    <div class="content-news-item-date">
+                                                        <p>25.04.2021<span>14:30</span></p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="content-news-item-text">
+                                                <p>
+                                                    Равным образом постоянное информационно-техническое обеспечение
+                                                    нашей деятельности напрямую зависит от направлений прогрессивного
+                                                    развития. Равным образом консультация с профессионалами из IT
+                                                    позволяет оценить значение дальнейших направлений развития проекта!
+                                                    Повседневная практика показывает, что постоянный количественный рост
+                                                    и сфера нашей активности обеспечивает актуальность модели развития.
+                                                </p>
+                                                <p>
+                                                    Не следует, однако, забывать о том, что рамки и место обучения
+                                                    кадров позволяет выполнить важнейшие задания по разработке
+                                                    дальнейших направлений развитая системы массового участия.
+                                                    Соображения высшего порядка, а также повышение уровня гражданского
+                                                    сознания напрямую зависит от всесторонне сбалансированных
+                                                    нововведений. Соображения высшего порядка, а также рамки и место
+                                                    обучения кадров представляет собой интересный эксперимент проверки
+                                                    новых предложений. С другой стороны постоянное
+                                                    информационно-техническое обеспечение
+                                                </p>
+                                                <p>массового участия. Соображения высшего порядка, а также повышение уровня гражданского сознания напрямую зависит от всесторонне сбалансированных нововведений. Соображения высшего порядка, а также рамки и место обучения кадров представляет собой интересный эксперимент проверки новых предложений. С другой стороны постоянное информационно-техническое обеспечение </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main__content main__content-idea" id="5">
+                            <div class="progressbar progressbar-50">
+                                <div class="progressbar__box">
+                                    <div class="progressbar__from">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                    <div class="progressbar__lvl">
+                                        <p><span>12</span>lvl</p>
+                                    </div>
+                                    <div class="progressbar__to">
+                                        <p>18%</p>
+                                        <span>dsfg gsfdghh hgfhdf</span>
+                                    </div>
+                                </div>
+                                <div class="progressbar__scale progressbar__scale-50"></div>
+                            </div>
+                            <div class="main__content-inner main__content-idea-inner">
+                                <div class="row justify-content-center justify-content-lg-start">
+                                    <div class="main__content-idea-offer">
+                                        <p>Поделитесь своей идеей, как нам можно улучшить наш сервис</p>
+                                        <p>Или раскажите о багах которые вы обнаружили</p>
+                                    </div>
+                                    <div class="main__content-chat-box main__content-idea-box">
+                                        <div class="main__content-chat-box-wrapper main__content-idea-box-wrapper">
+                                            <div class="main__content-chat-message main__content-idea-message">
+                                                <div class="main__content-chat-message-name">
+                                                    <p>Fenomen-1hp</p>
+                                                </div>
+                                                <div class="main__content-chat-message-text main__content-idea-message-text">
+                                                    <p>Привет, как дела? Все хорошо?</p>
+                                                        <p>Ghtlkfuf. blt. yjde.? njg жмите лайк, дожмем.....</p>
+                                                        
+                                                    
+                                                </div>
+                                                <div class="main__content-idea-like">
+                                                    <p>1432</p>
+                                                </div>
+                                            </div>
+                                            <div class="main__content-chat-message main__content-idea-message">
+                                                <div class="main__content-chat-message-name">
+                                                    <p>Fenomen-1hp</p>
+                                                </div>
+                                                <div class="main__content-chat-message-text main__content-idea-message-text">
+                                                    <p>Привет, как дела? Все хорошо?</p>
+                                                        <p>Ghtlkfuf. blt. yjde.? njg жмите лайк, дожмем.....</p>
+                                                        
+                                                    
+                                                </div>
+                                                <div class="main__content-idea-like">
+                                                    <p>1432</p>
+                                                </div>
+                                            </div>
+                                            <div class="main__content-chat-message main__content-idea-message">
+                                                <div class="main__content-chat-message-name">
+                                                    <p>Fenomen-1hp</p>
+                                                </div>
+                                                <div class="main__content-chat-message-text main__content-idea-message-text">
+                                                    <p>Привет, как дела? Все хорошо?
+                                                        
+                                                    Ghtlkfuf. blt. yjde.? njg жмите лайк, дожмем..... Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?Ghtlkfuf. blt. yjde.? njg жмите лайк, дожмем..... Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?Ghtlkfuf. blt. yjde.? njg жмите лайк, дожмем.....
+                                                    </p>
+                                                    <p>Ghtlkfuf. blt. yjde.? njg жмите лайк, дожмем..... Привет, как дела? Все хорошо?</p>
+                                                    <p>Ghtlkfuf. blt. yjde.? njg жмите лайк, дожмем..... Привет, как дела? Все хорошо?</p>
+                                                    <p>Ghtlkfuf. blt. yjde.? njg жмите лайк, дожмем..... Привет, как дела? Все хорошо? Привет, как дела? Все хорошо?</p>
+                                                        
+                                                    
+                                                </div>
+                                                <div class="main__content-idea-like">
+                                                    <p>1432</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main__content-chat-entr main__content-idea-entr">
+                                            <form>
+                                                <textarea></textarea>
+                                                <button>
+                                                    <img src="img/icons/send.svg" alt="">
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bgc-brown"></div>
+        <div class="bgc-white"></div>
+    </section>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="js/script.min.js"></script>
+</body>
+
+</html>
