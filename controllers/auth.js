@@ -43,7 +43,7 @@ module.exports.login = async function(req, res) {
 //(Добавить имя, никнейм + их проверки на длину)----------
 module.exports.register = async function(req, res) {
     const candidate = await User.findOne({email: req.body.email});
-
+    console.log("00000");
     if (candidate) {
         // Пользователь существует, нужно отправить ошибку
         res.status(409).json({
@@ -51,12 +51,16 @@ module.exports.register = async function(req, res) {
         });
     } else {
         // Нужно создать пользователя
+        console.log("11111111");
         const salt = bcrypt.genSaltSync(10);
         const password = req.body.password;
+        console.log("222222");
         const user = new User({
             email: req.body.email,
             password: bcrypt.hashSync(password, salt),
         });
+        console.log(user);
+        console.log("333333333");
         const profile = new Profile({
             id_user: user._id,
             name: "",
@@ -64,16 +68,19 @@ module.exports.register = async function(req, res) {
             scores: 0,
             lvl: 1,
             finance: "100000"
-        })
+        });
+        console.log("4444444444");
         try {
             await user.save();
+            console.log("5555555555");
             await profile.save();
+            console.log("666666666");
             // Генерация токена, пароли совпали
             const token = jwt.sign({
                 email: user.email,
                 userId: user._id
             }, keys.jwt, {expiresIn: 60 * 60});
-
+            console.log("77777777777");
             res.status(201).json({
                 token: `Bearer ${token}`
             });

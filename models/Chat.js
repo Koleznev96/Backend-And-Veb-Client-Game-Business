@@ -16,6 +16,11 @@ const chatSchema = new Schema({
     date: {
         type: String,
         required: false
+    },
+    // Дата
+    date_new: {
+        type: Date,
+        required: false
     }
 });
 

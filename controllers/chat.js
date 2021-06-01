@@ -9,7 +9,7 @@ const Chat = require('../models/Chat');
 // Получение последних 30 сообщений
 module.exports.outputMessages = async function(req, res) {
     try {
-        let chat = await Chat.find().sort('date').limit(30);
+        let chat = await Chat.find().sort('date_new').limit(30);
         res.status(201).json(chat);
     } catch(e) {
         errorHandler(res, e);
@@ -29,7 +29,8 @@ module.exports.creationMessage = async function(req, res) {
     const new_message = new Chat({
         author: profile.nickname,
         text: req.body.text,
-        date: date_message
+        date: date_message,
+        date_new: new Date()
     });
 
     try {

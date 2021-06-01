@@ -26,4 +26,7 @@ router.post('/test_admin', passport.authenticate('jwt', {session: false}), contr
 // localhost:5000/api/admin/add_business_lvl
 router.post('/add_business_lvl', passport.authenticate('jwt', {session: false}), controller.addBusinessLvl);
 
+//deleteChat
+router.post('/delete_chat', passport.authenticate('jwt', {session: false}), controller.deleteChat);
+
 module.exports = router;

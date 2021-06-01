@@ -11,8 +11,6 @@ router.post('/output_news',
 
 // localhost:5000/api/news/add_news
 // ПДобавление нвоости
-router.post('/add_news',
-    passport.authenticate('jwt', {session: false}),
-    controller.addNews);
+router.post('/add_news', controller.addNews);
 
 module.exports = router;

@@ -1,3 +1,4 @@
+const dateformat = require('dateformat');
 const errorHandler = require('../utils/errorHandler');
 
 const News = require('../models/News');
@@ -17,10 +18,15 @@ module.exports.outputNews = async function(req, res) {
 // (Перенести в ADMIN + Проверки)------------------
 // Создание новости
 module.exports.addNews = async function(req, res) {
+    let date_message = new Date();
+    let month = date_message.getMonth() + 1;
+    let day = date_message.getDate();
+    let year = date_message.getFullYear();
+    date_message = dateformat(date_message, "h:MM");
     const news = new News({
         heading: req.body.heading,
         text: req.body.text,
-        date: new Date()
+        date: day + "." + month + "." + year + " " + date_message
     });
 
     try {

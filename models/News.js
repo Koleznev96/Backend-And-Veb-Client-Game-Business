@@ -14,7 +14,7 @@ const newsSchema = new Schema({
     },
     // Дата
     date: {
-        type: Date,
+        type: String,
         required: false
     }
 });

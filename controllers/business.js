@@ -33,8 +33,9 @@ module.exports.outputBusiness = async function(req, res) {
 //+
 // Изменение баланса юзера
 async function user_finance(profile, add_amount) {
+    console.log("555555");
     profile.finance = Number.parseInt(profile.finance) + Number.parseInt(add_amount) + "";
-
+    console.log(profile);
     await profile.save();
 }
 
@@ -46,17 +47,29 @@ module.exports.createNewBusiness = async function(req, res) {
             id_business: req.body.id_new_business,
             id_user: req.user.id
         });
+        console.log("000000");
         // Проверяем не создан ли уже этот бизнес
         if (!business_user_all) {
+            console.log("111111");
             let business = await typeBusiness.findOne({
                 _id: req.body.id_new_business
             });
+            console.log("222222");
             let profile = await Profile.findOne({
                 id_user: req.user.id
             });
+            console.log("333333");
+            console.log(Number.parseInt(profile.finance));
+            console.log(Number.parseInt(business.valuable));
             if (Number.parseInt(profile.finance) >= Number.parseInt(business.valuable)) {
+                console.log("44444");
                 // Отнимаем деньги за бизнес
-                await user_finance(profile, Number.parseInt(business.valuable) * (-1));
+                // await user_finance(profile, Number.parseInt(business.valuable) * (-1));
+                console.log("555555");
+                profile.finance = Number.parseInt(profile.finance) - Number.parseInt(business.valuable) + "";
+                console.log(profile);
+                await profile.save();
+                console.log("88888888");
                 let question = await typeQuestion.findOne({
                     id_business: req.body.id_new_business,
                     lvl: 1

@@ -6,6 +6,7 @@ const userBusiness = require('../models/UserBusiness');
 const userAnswer = require('../models/UserAnswer');
 const checked = require('../models/Checked');
 const businessLvl = require('../models/BusinessLvl');
+const Chat = require('../models/Chat');
 
 const number_review = 3;
 const number_answer = 3;
@@ -133,5 +134,14 @@ module.exports.test_admin = async function(req, res) {
         });
     } catch(e) {
         errorHandler(res, e)
+    }
+}
+
+module.exports.deleteChat = async function(req, res) {
+    try {
+        await Chat.deleteMany();
+        res.status(201).json("ok");
+    } catch(e) {
+        errorHandler(res, e);
     }
 }

@@ -56,7 +56,7 @@ export const NewsPage = () => {
                 </div>
                 <div className="content-news-item-text">
                     <p>
-                        { item.text }
+                        { item.heading }
                     </p>
                 </div>
             </div>
