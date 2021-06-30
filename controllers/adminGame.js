@@ -2,11 +2,12 @@ const errorHandler = require('../utils/errorHandler');
 
 const typeBusiness = require('../models/TypeBusiness');
 const typeQuestion = require('../models/TypeQuestion');
-const userBusiness = require('../models/UserBusiness');
+const userBusiness = require('../models/UserBusiness9');
 const userAnswer = require('../models/UserAnswer');
 const checked = require('../models/Checked');
 const businessLvl = require('../models/BusinessLvl');
 const Chat = require('../models/Chat');
+const Articles = require('../models/Articles');
 
 const number_review = 3;
 const number_answer = 3;
@@ -19,6 +20,29 @@ const status_checked_true = "true"; // не может проверять чуж
 
 // (Сделать админ базу + авторизация для админов)-----------
 
+module.exports.addArticle = async function(req, res) {
+    const addArticles = new Articles({
+        id_question: req.body.id_question,
+        id_business: req.body.id_business,
+        header: req.body.header,
+        text: req.body.text,
+    });
+    try {
+        await addArticles.save();
+        res.status(201).json(addArticles);
+    } catch(e) {
+        errorHandler(res, e)
+    }
+}
+
+module.exports.outputArticle = async function(req, res) {
+    try {
+        const articles = await Articles.find();
+        res.status(201).json(articles);
+    } catch(e) {
+        errorHandler(res, e)
+    }
+}
 
 module.exports.addBusinessLvl = async function(req, res) {
     const addbusinessLvl = new businessLvl({
@@ -42,7 +66,8 @@ module.exports.addBusiness = async function(req, res) {
         raty: req.body.raty_business,
         number_users: 0,
         valuable: req.body.valuable_business,
-        imageSrc: req.file ? req.file.path : ''
+        imageSrc: req.file ? req.file.path : '',
+        description: req.body.description,
     });
 
     try {

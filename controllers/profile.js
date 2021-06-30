@@ -44,7 +44,14 @@ module.exports.changetProfile = async function(req, res) {
         _id: req.user.id
     });
     if (req.body.name) profile.name = req.body.name;
-    if (req.body.nickname) profile.nickname = req.body.nickname;
+    if (req.body.nickname) {
+        let profile_let = await Profile.findOne({
+            nickname: req.body.nickname
+        });
+        if (profile_let)
+            return res.status(404).json({type: "changet_profile", message: 'Такой никнейм уже занят.'});
+        profile.nickname = req.body.nickname;
+    }
     if (req.body.email) user.email = req.body.email;
     try {
         await profile.save();

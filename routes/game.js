@@ -59,4 +59,28 @@ router.post('/output_question',
     passport.authenticate('jwt', {session: false}),
     controller.outputQuestion);
 
+// localhost:5000/api/game/output-list-article
+// Получение данных о вопросе + статья
+router.post('/output-list-article',
+    passport.authenticate('jwt', {session: false}),
+    controller.outputListArticle);
+
+// localhost:5000/api/game/output-article
+// Получение данных о вопросе + статья
+router.post('/output-article',
+    passport.authenticate('jwt', {session: false}),
+    controller.outputArticle);
+
+// localhost:5000/api/game/output-save-article
+// Получение данных о вопросе + статья
+router.post('/output-save-article',
+    passport.authenticate('jwt', {session: false}),
+    controller.outputSaveArticle);
+
+// localhost:5000/api/game/save-article-handler
+// Получение данных о вопросе + статья
+router.post('/save-article-handler',
+    passport.authenticate('jwt', {session: false}),
+    controller.SaveArticleHandler);
+
 module.exports = router;

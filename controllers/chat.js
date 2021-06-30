@@ -9,7 +9,7 @@ const Chat = require('../models/Chat');
 // Получение последних 30 сообщений
 module.exports.outputMessages = async function(req, res) {
     try {
-        let chat = await Chat.find().sort('date_new').limit(30);
+        let chat = await Chat.find().sort('date_new');
         res.status(201).json(chat);
     } catch(e) {
         errorHandler(res, e);
@@ -20,6 +20,7 @@ module.exports.outputMessages = async function(req, res) {
 // Создание сообщения
 // {"text": "text_text"}
 module.exports.creationMessage = async function(req, res) {
+    console.log("00000")
     const profile = await Profile.findOne({
         id_user: req.user.id
     });
@@ -35,7 +36,7 @@ module.exports.creationMessage = async function(req, res) {
 
     try {
         await new_message.save();
-        const chat = await Chat.find().sort('date').limit(30);
+        const chat = await Chat.find().sort('date_new');
         res.status(201).json(chat);
     } catch(e) {
         errorHandler(res, e);

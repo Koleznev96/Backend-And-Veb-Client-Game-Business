@@ -29,4 +29,10 @@ router.post('/add_business_lvl', passport.authenticate('jwt', {session: false}),
 //deleteChat
 router.post('/delete_chat', passport.authenticate('jwt', {session: false}), controller.deleteChat);
 
+//addArticle
+router.post('/add-article', passport.authenticate('jwt', {session: false}), controller.addArticle);
+
+//outputArticle
+router.post('/output-article', passport.authenticate('jwt', {session: false}), controller.outputArticle);
+
 module.exports = router;

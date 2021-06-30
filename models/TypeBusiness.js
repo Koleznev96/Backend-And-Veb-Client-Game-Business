@@ -23,7 +23,12 @@ const businessSchema = new Schema({
     valuable: {
         type: String,
         required: true
-    }
+    },
+    // Описание
+    description: {
+        type: String,
+        default: ''
+    },
 });
 
 module.exports = model('type_business', businessSchema);

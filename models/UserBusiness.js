@@ -44,13 +44,13 @@ const userBusinessSchema = new Schema({
     // ObjectId(UserAnswer)
     answer_send: {
         type: Schema.Types.ObjectId,
-        ref: 'save_user_answer',
+        ref: 'user_answer',
         required: false
     },
     // ObjectId(saveUserAnswer)
     answer_checked: {
         type: Schema.Types.ObjectId,
-        ref: 'user_answer',
+        ref: 'save_user_answer',
         required: false
     },
     // Date()
