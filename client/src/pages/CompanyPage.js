@@ -19,6 +19,8 @@ export const CompanyPage = () => {
     const message = useMessage();
     const {loading, request, error, clearError} = useHttp();
     const [modalActive, setModalActive] = useState(false);
+    const [dataNew, setdataNew] = useState(null);
+    const [userAnswer, setUserAnswer] = useState(null);
     const [form, setForm] = useState({
         withdrawal_money: '', id_user_business: CompanyId
     });
@@ -37,6 +39,8 @@ export const CompanyPage = () => {
             });
             setDataCompany(data.user_business)
             setAmount_improvement(data.amount_improvement);
+            setUserAnswer(data.user_answer);
+            setdataNew(new Date() - data.user_business.date_waiting);
         } catch (e) {}
     }, [auth.token, CompanyId, request]);
 
@@ -60,8 +64,13 @@ export const CompanyPage = () => {
     }
 
     const checkingTask = async () => {
-        if (dataCompany.status_answer === "expectation_answer") history.push(`/completing-task/${CompanyId}`);
-    }
+        clearError();
+        if (dataCompany.handler_task===true)
+            history.push(`/completing-task/${CompanyId}`);
+        else if(dataCompany.handler_checked===true)
+            history.push(`/assessment-answers/${CompanyId}`);
+    };
+
 
     const checkingCheckAnswer = async () => {
         if (dataCompany.status_checked === "true") history.push(`/assessment-answers/${CompanyId}`);
@@ -72,7 +81,7 @@ export const CompanyPage = () => {
             const data = await request('/api/game/increase_business_lvl', 'POST', {id_business: CompanyId}, {
                 Authorization: `${auth.token}`
             });
-            setDataCompany(data.user_business)
+            setDataCompany(data.user_business);
             setAmount_improvement(data.amount_improvement);
         } catch (e) {}
     }
@@ -82,7 +91,7 @@ export const CompanyPage = () => {
             const data = await request('/api/game/withdrawal_money_business', 'POST', {...form}, {
                 Authorization: `${auth.token}`
             });
-            notify(data.message.toString());
+            setDataCompany(data.user_business);
         } catch (e) {}
     }
 
@@ -137,39 +146,69 @@ export const CompanyPage = () => {
                                 Вывести деньги в общий счет
                             </a>
                         </div>
-                        <div className="content-company-link-answer">
-                            <a
-                                onClick={checkingCheckAnswer}
-                            >Оценить ответы <span>(+10000)</span></a>
-                        </div>
+                        {/*<div className="content-company-link-answer">*/}
+                        {/*    <a*/}
+                        {/*        onClick={checkingCheckAnswer}*/}
+                        {/*    >Оценить ответы <span>(+10000)</span></a>*/}
+                        {/*</div>*/}
                     </div>
                     <div className="main__content-company-box">
                         <div className="main__content-company-box-up">
                             <a
                                 onClick={levelUp}
                             >
-                                Улучшить предприятие
+                                Улучшить предприятие({ amount_improvement } руб.)
                             </a>
                             <div className="main__content-company-box-up-text">
-                                <p>Стоймость учлучшения предприятия</p>
-                                <p>составляет:<span>
-                                    { amount_improvement }
-                                </span>$</p>
+                                {/*{ (error && error.type === "increase_business_lvl") ? (*/}
+                                {/*    <p>*/}
+                                {/*    /!*    style={[*!/*/}
+                                {/*    /!*        GlobalStyle.CustomFontLight,*!/*/}
+                                {/*    /!*        styles.textErorrOutputMoney,*!/*/}
+                                {/*    /!*    ]}*!/*/}
+                                {/*    /!*>*!/*/}
+                                {/*        {error.message}*/}
+                                {/*    </p>*/}
+                                {/*) : null }*/}
+                                {/*<p>Стоймость учлучшения предприятия</p>*/}
+                                {/*<p>составляет:<span>*/}
+                                {/*    { amount_improvement }*/}
+                                {/*</span>$</p>*/}
                             </div>
                         </div>
-                        <div className="main__content-company-box-task">
-                            <a
-                                onClick={checkingTask}
-                            >Задание</a>
-                            <div className="main__content-company-box-task-text">
-                                <p>Статус задания: </p>
-                                <div className="main__content-company-box-task-text-box">
-                                    <span>
-                                        { dataCompany && statusTask(dataCompany.status_answer) }
-                                    </span>
-                                </div>
+                        {dataCompany ? (dataCompany.handler_task===true ? (
+                            <div className="main__content-company-box-task">
+                                <a
+                                    onClick={checkingTask}
+                                >Выполнить задание</a>
+                                {/*<div className="main__content-company-box-task-text">*/}
+                                {/*    <p>Статус задания: </p>*/}
+                                {/*    <div className="main__content-company-box-task-text-box">*/}
+                                {/*        <span>*/}
+                                {/*            { dataCompany && statusTask(dataCompany.status_answer) }*/}
+                                {/*        </span>*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
                             </div>
-                        </div>
+                        ): null): null }
+                        {dataCompany ? (dataCompany.handler_checked===true ? (
+                            <div className="main__content-company-box-task">
+                                <a
+                                    onClick={checkingTask}
+                                >Оценить ответы</a>
+                                {/*<div className="main__content-company-box-task-text">*/}
+                                {/*    <p>Статус задания: </p>*/}
+                                {/*    <div className="main__content-company-box-task-text-box">*/}
+                                {/*        <span>*/}
+                                {/*            { dataCompany && statusTask(dataCompany.status_answer) }*/}
+                                {/*        </span>*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
+                            </div>
+                        ): null): null }
+                    </div>
+                    <div className="main__content-company-box">
+
                     </div>
                 </div>
             </div>

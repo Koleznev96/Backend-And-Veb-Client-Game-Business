@@ -25,8 +25,8 @@ export const AssessmentAnswersPage = () => {
             const data = await request('/api/game/checked_answer', 'POST', {id_user_business: CompanyId}, {
                 Authorization: `${auth.token}`
             });
-            setAnswers(data);
-            const id_users = data.map((item, index ) =>
+            setAnswers(data.data_answer);
+            const id_users = data.data_answer.map((item, index ) =>
                 item.id
             );
             setId_answer(id_users);

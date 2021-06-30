@@ -14,6 +14,7 @@ export const BusinessesPage = () => {
     const [businesses, setBusinesses] = useState(null);
     const [modalActive, setModalActive] = useState(false);
     const [typeBusinesses, setTypeBusinesses] = useState(null);
+    const [profile, setProfile] = useState(null);
     const [form, setForm] = useState({
         name_new_business: '', id_new_business: ''
     });
@@ -29,7 +30,7 @@ export const BusinessesPage = () => {
             });
             setBusinesses(data.user_businesses);
             setTypeBusinesses(data.type_businesses);
-
+            setProfile(data.profile);
         } catch (e) {}
     }, [auth.token, request]);
 
@@ -138,7 +139,7 @@ export const BusinessesPage = () => {
                 { typeBusinesses && <SelectTypeBusiness listBusiness={typeBusinesses}/> }
 
                 <p>
-                    Личный счет: добавить р.
+                   Общий счет: {profile && profile.finance} р.
                 </p>
                 <p>
                     Стоймость бизнеса:
@@ -158,7 +159,7 @@ export const BusinessesPage = () => {
                         onClick={creationRequestBusiness}
                         disabled={loading}
                     >
-                        sfdsdfhgdfh
+                        Открыть
                     </button>
                 </div>
             </Modal>
